@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Happy Birthday Website 2.0 | Aoudumber Bade">
+    <meta name="github" content="https://github.com/Aoudumber-Bade">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Titan+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sriracha&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-pink: #7b7377a9;
+            --color-white: #fff;
+            --color-black: #333;
+            --color-text-pink: #FF7882;
+            --color-heart: #FF7882;
+            --color-bg-letter: #fff8e4;
+            --color-border: #DACCBF;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            position: relative;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-image: linear-gradient(var(--color-pink), var(--color-pink));
+        }
+
+        #wrapper {
+            position: relative;
+            background-color: transparent;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .boxMail {
+            position: fixed;
+            background: rgb(0, 0, 0, 0.8);
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0.3);
+            visibility: hidden;
+            transition: all 0.5s;
+            z-index: 100000000;
+        }
+
+        .boxMail.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .boxMail .boxMail-container {
+            position: absolute;
+            width: 750px;
+            height: 500px;
+            display: flex;
+            margin: 0;
+            transform: scale(0.9);
+            perspective: 2000px;
+            transition: all 0.5s;
+        }
+
+        .boxMail .boxMail-container .card1,
+        .boxMail .boxMail-container .card2 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid black;
+        }
+
+        .boxMail .boxMail-container .card1 {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, #FF7882, #FF7882 63%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .boxMail .boxMail-container .card2 {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, #e0e0e0, #ffffff 30%);
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+
+        .boxMail .boxMail-container .card2 .card2-content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: #FF7882;
+            color: #fff;
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .boxMail .boxMail-container .card2 h2 {
+            font-family: 'Dancing Script', cursive;
+            padding: 0px 20px;
+            text-indent: 20px;
+            font-size: 22px;
+            opacity: 1; /* Ensure the message is visible */
+        }
+
+        .small-message {
+            font-size: 14px; /* Adjust the size as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="flag__birthday">
+            <img src="./images/1.png" alt="" width="350" class="flag__left">
+            <img src="./images/1.png" alt="" width="350" class="flag__right">
+        </div>
+        <div class="content">
+            <div class="left">
+                <div class="title">
+                    <h1 class="happy">
+                        <span style="--t: 4s;">H</span>
+                        <span style="--t: 4.2s;">a</span>
+                        <span style="--t: 4.4s;">p</span>
+                        <span style="--t: 4.6s;">p</span>
+                        <span style="--t: 4.8s;">y</span>
+                    </h1>
+                    <h1 class="birthday">
+                        <span style="--t: 5s;">B</span>
+                        <span style="--t: 5.2s;">i</span>
+                        <span style="--t: 5.4s;">r</span>
+                        <span style="--t: 5.6s;">t</span>
+                        <span style="--t: 5.8s;">h</span>
+                        <span style="--t: 6s;">d</span>
+                        <span style="--t: 6.2s;">a</span>
+                        <span style="--t: 6.4s;">y</span>
+                    </h1>
+                    <div class="hat">
+                        <img src="./images/hat.png" alt="" width="130">
+                    </div>
+                </div>
+                <div class="date__of__birth">
+                    <span></span>
+                </div>
+                <div class="btn">
+                    <button id="btn__letter">
+                        <div class="mail">
+                            Click Here BEBB
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="right">
+                <div class="box__account">
+                    <div class="image">
+                        <img src="./images/unnamed.png" alt="">
+                    </div>
+                    <div class="name">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Pretyy BEBI</span>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="balloon_one">
+                        <img width="100px" src="./images/balloon1.png" alt="">
+                    </div>
+                    <div class="balloon_two">
+                        <img width="100px" src="./images/balloon2.png" alt="">
+                    </div>
+                </div>
+                <div class="cricle">
+                    <div class="text__cricle">
+                        <span style="--i: 1;">h</span>
+                        <span style="--i: 2;">a</span>
+                        <span style="--i: 3;">p</span>
+                        <span style="--i: 4;">p</span>
+                        <span style="--i: 5;">y</span>
+                        <span style="--i: 6;">-</span>
+                        <span style="--i: 7;">b</span>
+                        <span style="--i: 8;">i</span>
+                        <span style="--i: 9;">r</span>
+                        <span style="--i: 10;">t</span>
+                        <span style="--i: 11;">h</span>
+                        <span style="--i: 12;">d</span>
+                        <span style="--i: 13;">a</span>
+                        <span style="--i: 14;">y</span>
+                        <span style="--i: 15;">-</span>
+                    </div>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+        </div>
+        <div class="decorate_star star1" style="--t: 15s;"></div>
+        <div class="decorate_star star2" style="--t: 15.2s;"></div>
+        <div class="decorate_star star3" style="--t: 15.4s;"></div>
+        <div class="decorate_star star4" style="--t: 15.6s;"></div>
+        <div class="decorate_star star5" style="--t: 15.8s;"></div>
+        <div class="decorate_flower--one" style="--t: 15s;">
+            <img width="20" src="./images/decorate_flower.png" alt="">
+        </div>
+        <div class="decorate_flower--two" style="--t: 15.3s;">
+            <img width="20" src="./images/decorate_flower.png" alt="">
+        </div>
+        <div class="decorate_flower--three" style="--t: 15.6s;">
+            <img width="20" src="./images/decorate_flower.png" alt="">
+        </div>
+        <div class="decorate_bottom">
+            <img src="./images/decorate.png" alt="" width="100">
+        </div>
+        <div class="smiley__icon">
+            <img src="./images/smiley_icon.png" alt="" width="100">
+        </div>
+
+        <div class="boxMail">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="boxMail-container">
+                <div class="card1">
+                    <div class="userImg">
+                        <img src="images/unnamed.png" alt="">
+                    </div>
+                    <h4 class="username">To: Darling 💖<span class="underline"></span></h4>
+                    <h3>Happy Birthday</h3>
+                    <div class="imageCute">
+                        <img src="cute1.png" alt="">
+                    </div>
+                </div>
+                <div class="card2">
+                    <div class="card2-content">
+                        <h3>To You!</h3>
+                        <h2 class="small-message">
+                            Hi bebbb, so it's your 20th Birthday now yeheyyy! Happiest birthday to the most pretty, loving, caring woman I know!<br>
+                            Bebi, I am also thankful for you to be with me in this life, dako gid ang pinagbago ko tungod saimo labi na sa pananaw ko sa buhay and you know how happy i am with you. Thank you for always being there even though sa mga times nga busy ikaw. You've been always there, biskan nga kapoy ikaw sa studies mo sa school gina updan mo gyapon me para lng ma-updan mo ako. Thank you man sa pagiging understanding mo sa akon and sa paglibre mo nga wala sumbat, and i'm forever grateful for all the small and also sa big things you do for me.<br>
+                            <br>Now that you're not teenager anymore. <br>I wish that you may pursue your dreams in life with God. <br>I pray that you never doubt the amount of strength you have, You've already survived so many you thought you wouldn't. I also wish you good health and growth in all aspects emotionally, mentally, physically, and most especially, spiritually as you continue to mature. I hope kung may mga problems man ikaw nga di mo makayanan tas di mo madadali hambal sa iban just remember po ara si Lord nga imo mapalapitan, and i will also pray na maging mabungahon ang kinabuhi.<br>
+                            Always remember na ready ko ikaw buligan if you need my help or anything, I'm always here for you po haa? Iloveyouuuusomuch.
+                        </h2>
+                        <div class="imageCute2">
+                            <img src="cute2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    let datetxt = "JUNE 9, 2025";
+    let datatxtletter = "My love. You are a very special girl. I always silently thank you for coming into my life. Today, I wish you all the best, lots of health, and lots of joy. I always hope we will celebrate many more birthdays like this together. Happy birthday to you.💕";
+    let titleLetter = "To you";
+    let charArrDate = datetxt.split('');
+    let charArrDateLetter = datatxtletter.split('');
+    let charArrTitle = titleLetter.split('');
+    let currentIndex = 0;
+    let currentIndexLetter = 0;
+    let currentIndexTitle = 0;
+    let date__of__birth = document.querySelector(".date__of__birth span");
+    let text__letter = document.querySelector(".text__letter p");
+    setTimeout(function () {
+        timeDatetxt = setInterval(function () {
+            if (currentIndex < charArrDate.length) {
+                date__of__birth.textContent += charArrDate[currentIndex];
+                currentIndex++;
+            }
+            else {
+                let i = document.createElement("i");
+                i.className = "fa-solid fa-star"
+                document.querySelector(".date__of__birth").prepend(i)
+                document.querySelector(".date__of__birth").appendChild(i.cloneNode(true))
+                clearInterval(timeDatetxt)
+            }
+        }, 100)
+    }, 12000)
+
+    var intervalContent;
+    var intervalTitle;
+    $("#btn__letter").on("click", function () {
+        $(".boxMail").addClass('active'); // Show the message box
+        setTimeout(function () {
+            intervalTitle = setInterval(function () {
+                if (currentIndexTitle < charArrTitle.length) {
+                    document.querySelector(".title__letter").textContent += charArrTitle[currentIndexTitle];
+                    let i = document.createElement("i");
+                    i.className = "fa-solid fa-heart"
+                    document.querySelector(".title__letter").appendChild(i)
+                    currentIndexTitle++;
+                }
+                else {
+                    clearInterval(intervalTitle)
+                }
+            }, 100)
+        }, 2000);
+
+        // Automatically scroll down the message
+        const messageContainer = document.querySelector('.card2-content');
+        messageContainer.scrollTop = messageContainer.scrollHeight; // Scroll to the bottom
+    });
+
+    $(".close").on("click", function () {
+        $(".boxMail").removeClass('active'); // Hide the message box
+    });
+</script>
+
+</html>
